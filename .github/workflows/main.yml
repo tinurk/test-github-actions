@@ -19,18 +19,19 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          pip install -r requirements-dev.txt
 
       - name: Run tests
-        run: pytest tests
+        run: pytest .
 
       - name: flake8
-        run: flake8 src/
+        run: flake8 .
 
       - name: mypy
-        run: mypy src/
+        run: mypy .
 
       - name: black
-        run: black --diff --check src/
+        run: black --diff --check .
 
       - name: isort
-        run: isort --check-only --diff src/
+        run: isort --check-only --diff .
