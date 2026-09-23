@@ -27,7 +27,10 @@ app = FastAPI(lifespan=lifespan)
     "/recipes",
     response_model=list[ShortRecipe],
     summary="Получить все рецепты",
-    description="Возвращает список всех рецептов, отсортированных по количеству просмотров и времени приготовления.",
+    description=(
+        "Возвращает список всех рецептов, отсортированных "
+        "по количеству просмотров и времени приготовления."
+    ),
 )
 async def get_recipes(db: AsyncSession = Depends(get_db)):
     """
