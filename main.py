@@ -47,8 +47,7 @@ async def get_recipes(db: AsyncSession = Depends(get_db)):
     summary="Получить рецепт по ID",
     description="Возвращает рецепт по указанному ID.",
 )
-async def get_recipes_by_id(
-    recipe_id: int, db: AsyncSession = Depends(get_db)):
+async def get_recipes_by_id(recipe_id: int, db: AsyncSession = Depends(get_db)):
     """
     Получение рецепта по его ID.
         recipe_id: ID рецепта.
@@ -82,8 +81,7 @@ async def get_recipes_by_id(
     summary="Создать новый рецепт",
     description="Создает новый рецепт и возвращает его.",
 )
-async def create_recipe(
-    recipe: RecipeCreate, db: AsyncSession = Depends(get_db)):
+async def create_recipe(recipe: RecipeCreate, db: AsyncSession = Depends(get_db)):
     """
     Создание нового рецепта.
         recipe: Объект `RecipeCreate`, содержащий данные нового рецепта.
